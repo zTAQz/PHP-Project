@@ -9,7 +9,7 @@ services:
       MYSQL_ROOT_PASSWORD: root # Mật khẩu root
       MYSQL_DATABASE: project1_db # Tên database tự tạo
     ports:
-      - "3306:3306"
+      - "3307:3306"
     volumes:
       - db_data:/var/lib/mysql # Lưu dữ liệu để không mất khi tắt Docker
 
