@@ -21,7 +21,7 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./frontend/    # Lấy code từ thư mục này ở GitHub
-          server-dir: /htdocs/      # Đẩy vào thư mục gốc trên Host
+          server-dir: tquoc.page.gd/htdocs/      # Đẩy vào thư mục gốc trên Host
           exclude: |
             **/.git*
             **/.git*/**
