@@ -1,8 +1,21 @@
 <?php
-$host = "sql302.infinityfree.com";
-$dbname = "if0_40245835_phpproject";
-$username = "if0_40245835";
-$password = "H8pHYNWlysy";
+$is_local = false;
+if ($_SERVER['HTTP_HOST'] == 'localhost' || $_SERVER['SERVER_PORT'] == 8000) {
+    $is_local = true;
+}
+
+if ($is_local) {
+    $host = 'my-db';
+    $db   = 'project1_db';
+    $user = 'root';
+    $pass = 'root';
+} else {
+    $host = "sql302.infinityfree.com";
+    $dbname = "if0_40245835_phpproject";
+    $username = "if0_40245835";
+    $password = "H8pHYNWlysy";
+}
+
 
 try {
 
