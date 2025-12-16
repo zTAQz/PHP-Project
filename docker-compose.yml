@@ -1,34 +1,35 @@
 version: "3.8"
 
 services:
-  # 1. DATABASE (MySQL)
+  # 1. DATABASE
   my-db:
     image: mysql:8.0
     container_name: p1-mysql
     environment:
-      MYSQL_ROOT_PASSWORD: root # Mật khẩu root
-      MYSQL_DATABASE: project1_db # Tên database tự tạo
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: project1_db
     ports:
-      - "3307:3306"
+      - "3307:3306" # Đã sửa để tránh cổng 3306
     volumes:
-      - db_data:/var/lib/mysql # Lưu dữ liệu để không mất khi tắt Docker
+      - db_data:/var/lib/mysql
 
-  # 2. BACKEND (PHP + PDO)
+  # 2. BACKEND
   backend:
     build: ./backend
     container_name: p1-backend
     ports:
-      - "8000:80" # Truy cập API qua localhost:8000
+      # Đổi 8000 thành 8001 (Nếu 8000 bị lỗi)
+      - "8001:80"
     depends_on:
       - my-db
 
-  # 3. FRONTEND (HTML)
+  # 3. FRONTEND
   frontend:
     build: ./frontend
     container_name: p1-frontend
     ports:
-      - "8080:80" # Truy cập Web qua localhost:8080
+      # Đổi 8080 thành 8081 (Nếu 8080 bị lỗi)
+      - "8081:80"
 
-# Khai báo volume
 volumes:
   db_data:
