@@ -14,7 +14,7 @@ try {
     } else {
         echo json_encode([
             ["id" => 1, "name" => "Demo User PDO", "email" => "pdo@test.com"],
-            ["id" => 2, "name" => "Nguyen Van A", "email" => "nva@test.com"]
+            ["id" => 2, "name" => "Nguyen Van A", "email" => "nva@test2.com"]
         ]);
     }
 } catch (Exception $e) {
